@@ -4,7 +4,7 @@ This repository is for software 'ldic'
 ## Version : 0.1-3
 (Wed, 21 Sep 2016 15:27:24 +0900) 
 
-## File : ldic_0.1-1_amd64.deb
+## File : ldic_0.1-3_amd64.deb
 
 ## Architecture
 	x86_64
