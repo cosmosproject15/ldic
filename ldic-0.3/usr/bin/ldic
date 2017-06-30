@@ -1,0 +1,497 @@
+#!/bin/bash
+## Copyright: 2016 C O S M O S project. ## <cosmosproject15@gmail.com>
+## License: GPL-2.0+
+## Homepage : http://cosmosproject2015.tistory.com
+
+
+
+## help message function
+
+
+VERS="Version : 0.3"
+
+helpf() {
+
+if [ $LANGUAGE = "ko_KR" ]; then
+	echo "
+	     << LDIC : Linux - dictionary >>
+
+본 프로그램은 리눅스 일반 사용자 및 개발자들의 도움을 위하여 만들었습니다.
+
+'ldic은 utf-8 인코딩과 한글 검색을 지향 합니다.'
+
+$VERS
+
+1. ldic 명령과 함께 바로 원하는 답을 찾을 수 있습니다. 
+	(모든 라이브러리를 검색 합니다.) 
+
+	예제 1) : ldic <word>  
+	
+	예제 2) : ldic <word> <word> 
+		
+		= 두가지 단어가 있는 경우만을 출력 합니다. (최대 다섯가지 단업 입력이 가능 합니다.)
+
+	예제 3) : ldic --help
+		= ldic의 좀 더 자세한 도움말을 봅니다.
+
+2. 아래 옵션으로 검색하면 해당 라이브러리에서만 찾을수 있습니다. 
+
+	-b : bash 쉘 스크립트 및 유닉스 명령 및 각종 프로그램 특수 명령 라이브러리
+	-s : 소프트웨어 ppa 및 각종 uri 검색
+	-c : C 언어 프로그래밍 라이브러리
+	-P : 파이썬 프로그래밍 라이브러리
+	-h : Html 스크립트 라이브러리 (자바 스크립트 포함)
+	-j : 자바 프로그래밍 라이브러리
+	-a : android 개발 프로그래밍 라이브러리
+	-l : lazarus de 파스칼 프로그래밍 라이브러리
+
+
+		예제 2) : ldic -b
+			= 모든 bash 쉘 스크립트 및 유닉스 명령 및 각종 프로그램 특수 명령 라이브러리를 출력 합니다.
+			
+		예제 2) : ldic -j <word>
+			= 자바 프로그래밍 라이브러리에서 원하는 단어 겁색을 합니다.
+
+3. 아래의 옵션으로 유저가 원하는 사전을 저장 할 수 있습니다. 
+
+	-A : 유저가 원하는 글을 라이브러리에 저장 합니다. 
+	
+		예제 1) : ldic -A
+			= 유저가 원하는 사전 입력 프로그램을 시작 합니다.
+
+	-add : 유저가 만든 사전이 담긴 텍스트 파일을 라이브러리에 저장 합니다.
+	
+		예제 1) : ldic -add <file>
+		
+	-sync : 원하는 텍스트 사전 파일을 ldic 연동 합니다. (단, 전체 검색에만 반영 됩니다.)
+
+		예제 1): ldic -sync <file>
+
+홈페이지 (블로그) : http://cosmosproject2015.tistory.com
+
+제작자 : C O S M O S project. cosmosproject15@gmail.com
+감사 합니다."File has not found."
+"
+else
+
+
+	echo "
+
+
+	     << LDIC : Linux - dictionary >>
+
+This program is simply dictionary about GNU LIUNX for linux devolepers and beginner.
+
+'ldic은 utf-8 인코딩과 한글 검색을 지향 합니다.'
+
+$VERS		EX3) : ldic -A
+
+1. Typing your Question about linuxs & source codes with running program 
+	-(About command, ppa, root, security, Source codes) 
+
+	EX : ldic word word word 
+		= impotant target search higher.
+
+	EX. : ldic --help
+		= print ldic help page.
+
+2. Type selected search
+	-b : Bash shell & shell program scripts search.
+	-s : Software ppa & uri search.
+	-c : C language code search.
+	-P : Python language code search.
+	-h : Html language code search.
+	-j : Java programming words search.
+	-a : Android studio dictionary search.
+	-l : Lazarus de pascal programming dictionary search.
+	
+		EX1) : ldic -b
+			= all print bash shell scripts guide.
+			
+		EX2)  ldic -c if
+			= print guide about "if" form C language codes.
+			
+3. Insert dictionary to ldic
+
+	-A : Add dictionary comment insert to ldic-libs. 
+		EX1) : ldic -A
+			= your dictionary possible insert to ldic-librarys.
+	
+	-add : Add dictionarys file insert to ldic-libs.		
+		EX1) : ldic -add <filename>
+			= add you library file inser to ldic dictionarys.
+		
+	--sync : Text dictionory file sync with ldic. ( Standards search )
+
+		Ex 1): ldic -sync <file>
+	
+Home page : http://cosmosproject2015.tistory.com
+
+Maintainer : C O S M O S project. cosmosproject15@gmail.com
+Thank you.
+"
+fi
+
+exit 0
+}
+
+## savelibs settind
+
+savelibs="b : bash shell scripts search.
+b : bash & shell scripts & Special order dictionarys search.
+s : Software ppa & uri search.
+c : C language code. 
+P : Python language code. 
+h : Html language code.
+j : java programming dictionary.
+a : android-studio programming dictionary.
+l : lazarus de pascal programming dictionary.
+x : Exit.
+	Select library :"
+if [ $LANGUAGE = "ko_KR" ]; then
+	savelibs="b : bash 쉘 스크립트 및 유닉스 명령 및 각종 프로그램 특수 명령 라이브러리
+s : 소프트웨어 ppa 및 각종 uri 검색
+c : C 언어 프로그래밍 라이브러리
+P : 파이썬 프로그래밍 라이브러리
+h : Html 스크립트 라이브러리 (자바 스크립트 포함)
+j : 자바 프로그래밍 라이브러리
+a : android 개발 프로그래밍 라이브러리
+l : lazarus de 파스칼 프로그래밍 라이브러리
+x : 종료
+	저장할 라이브러리를 선택하여 주십시오. : "
+fi
+
+
+##
+
+if [ -z $1  ]; then
+	helpf
+
+fi
+
+if [ $1 = --help ]; then
+	helpf
+fi
+
+
+
+addf() {
+
+usrsave() {
+print1="Your library file add to ldic dictionary completed."
+if [ $LANGUAGE = "ko_KR" ]; then
+	print1="사전 파일 추가가 완료 되었습니다."
+fi
+if [ ! -d ~/.ldic-lib ]; then
+	mkdir ~/.ldic-lib
+fi
+
+cat $udic >> ~/.ldic-lib/$LIBS
+cat ~/.ldic-lib/$LIBS
+echo $print1
+echo "
+PATH : ~/.ldic-lib/$LIBS
+"
+exit 0
+	
+}
+read -p "$savelibs" A2
+	
+	## Save user dictionarys function
+	
+	
+	
+	##
+	
+	case $A2 in
+	b|B)
+		LIBS=BASH;usrsave
+		;;
+
+	s|S)
+		LIBS=ppa;usrsave
+		;;
+
+	p)
+		LIBS=python;usrsave
+		;;
+	c|C)
+		LIBS=c;usrsave
+		;;
+	P)
+		LIBS=python;usrsave
+		;;
+	h|H)
+		LIBS=html;usrsave
+		;;
+	j|J)
+		LIBS=java;usrsave
+		;;
+	a|A)
+		LIBS=android-studio;usrsave
+		;;
+	l|L)
+		LIBS=lazarus-pascal;usrsave
+		;;
+	x|X)
+		exit 0
+		;;
+	*)
+		addf
+		;;
+	esac
+}
+
+
+if [ $1 = -add ]; then
+
+	print3="you need run as insert filename."
+	if [ $LANGUAGE = "ko_KR" ]; then
+		print3="파일 이름을 지정하여 다시 실행해 주십시오."
+	fi
+	if [ -z $2 ]; then
+		echo "$print3"
+		exit 0
+	fi
+	if [ -s $2 ]; then
+		udic="$2"
+		addf
+	fi
+	echo "$print3"
+	exit 0
+fi
+
+## scenario scripts
+
+## Add dictionary comment insert to ldic-libs.scripts
+reA() {
+	print1="Do you want re add library to ldic dictionary? [y/n] :"
+if [ $LANGUAGE = "ko_KR" ]; then
+	print1="다른 사전 내용을 또 추가 하시겠습니까? [Y / N] :"
+fi
+
+read -n1 -p "$print1" rea
+
+case $rea in
+y|Y)
+	ldic -A 
+	;;
+n|N)
+	exit 0
+	;;
+
+*)
+	exit 0
+esac
+
+}
+if [ $1 = -A ]; then
+	if [ ! -d ~/.ldic-lib ]; then
+	mkdir ~/.ldic-lib
+	fi
+	print1="
+Insert dictionary comments and anter
+	:"
+	print2="
+Insert Answer inserted dictionary comments and enter
+	:"
+	if [ $LANGUAGE = "ko_KR" ]; then
+		print1="
+저장 하고자 하는 사전 내용을 입력하고 엔터를 눌러 주십시오.
+
+	:"
+	
+		print2="입력하신 사전의 주석을 달아 주시고 엔터를 눌러 주십시오.
+	:"
+	fi
+	read -p "$print1" A
+	read -p "$print2" A1
+	while [ : ]; do
+	
+	read -p "$savelibs" A2
+	
+	## Save usr single dictionarys function
+usrsimsave() {
+	echo "$A	# $A1" >> ~/.ldic-lib/$udfile
+	cat ~/.ldic-lib/$udfile
+	print1="
+Ldic has inserted to your ldic dictionary completed."
+	if [ $LANGUAGE = "ko_KR" ]; then
+	print1="사용자 사전을 해당 라이브러리에 저장 하였습니다."
+	fi
+	
+	echo "$print1"
+	reA
+	exit 0 
+	}
+	##
+	
+	
+	case $A2 in
+	b|B)
+		udfile=BASH;usrsimsave
+		;;
+	s|S)
+		udfile=python;usrsimsave
+		;;
+	c|C)
+		udfile=c;usrsimsave
+		;;
+	p|P)
+		udfile=python;usrsimsave
+		;;
+	h|H)
+		udfile=html;usrsimsave
+		;;
+	j|J)
+		udfile=java;usrsimsave
+		;;
+	a|A)
+		udfile=android-studio;usrsimsave
+		;;
+	l|L)
+		udfile=lazarus-pascal;usrsimsave
+		;;
+	x|X)
+		exit 0
+		;;
+	*)	
+		reask1="Please select again."
+		if [ $LANGUAGE = "ko_KR" ]; then
+			reask1="잘못 선택 했으니 다시 선택해 주세요.
+종료를 원하시면 x를 누르거나 Ctrl+c로 종료 하여 주십시오."
+		fi
+		echo "$reask1"
+		;;
+	esac
+	
+	done
+fi
+
+## user dictionary load fuction 
+
+
+usrdic() {
+print2="Load user dictionarys."
+if [ $LANGUAGE = "ko_KR" ]; then
+	print2="사용자 사전"
+fi
+if [ -s ~/.ldic-lib/$udfile ]; then
+	echo "$print2"
+	cat ~/.ldic-lib/$udfile |grep -A 5 -B 5 --color "$ut1" |grep "$ut2" |grep "$ut3" |grep "$ut4" |grep "$ut5" |grep "$ut6"
+fi
+
+}
+
+usrdic0() {
+print2="Load user dictionarys."
+if [ $LANGUAGE = "ko_KR" ]; then
+	print2="사용자 사전"
+fi
+if [ -s ~/.ldic-lib/$udfile ]; then
+	echo "print2"
+	cat ~/.ldic-lib/$udfile 
+fi
+
+}
+
+
+## 
+
+## Load dictionarys function.
+
+loadic() {
+
+if [ -n $2 ]; then
+
+	cat /usr/lib/ldic/libs/$udfile |grep -A 5 -B 5 --color "$ut1" |grep "$ut2" |grep "$ut3" |grep "$ut4" |grep "$ut5" |grep "$ut6"
+		
+	usrdic
+	print1="
+ldic has loaded dictionary words completed."
+	if [ $LANGUAGE = "ko_KR" ]; then
+		print1="
+사전 출력을 완료 하였습니다."
+	fi
+	echo "$print1" 
+	exit 0
+else if [ -z $2 ]; then
+	cat /usr/lib/ldic/libs/$udfile
+	usrdic0
+	
+	echo "
+ldic has loaded dictionary words completed."
+	exit 0
+
+	fi
+fi
+
+}
+
+
+##
+ut1="$2"
+ut2="$3"
+ut3="$4"
+ut4="$5"
+ut5="$6"
+case $1 in
+-b|-B)
+
+	udfile=BASH;loadic
+	;;
+-s|-S)
+	udfile=ppa;loadic
+	;;
+	
+-l|-L)
+	udfile=lazarus-pascal;loadic
+	;;
+-a|-A)
+	udfile=android-studio;loadic
+	;;
+-p|-P)
+	udfile=python;loadic
+	;;
+-c|-C)
+	udfile=c;loadic
+	;;
+-h|-H)
+	udfile=html;loadic
+	;;
+-j|-J)
+	udfile=java;loadic
+	;;
+-help|-HELP|--HELP|-HELP)
+	helpf
+	;;
+-sync|--sync|--SYNC|-SYNC) 
+	print1="File has not found."
+	if [ $LANGUAGE = "ko_KR" ]; then
+		print1="파일을 찾을 수 없습니다."
+	fi
+	if [ ! -s $2 ]; then
+		echo 
+		exit 0
+	fi
+	ln -s $2 ~/.ldic-lib/
+	;;
+*)
+	cat /usr/lib/ldic/libs/* |grep -A 5 -B 5 --color "$1" |grep "$2" |grep "$3" |grep "$4" |grep "$5" 
+
+	if [ -d ~/.ldic-lib ]; then
+		echo "사용자 사전 출력"
+		cat ~/.ldic-lib/* | grep -A 5 -B 5 --color "$1" |grep "$2" |grep "$3" |grep "$4" |grep "$5" |grep "$6" 
+
+		exit 0
+	fi
+	exit 0
+	;;
+esac
+
+
+
+
+exit 0
+
+

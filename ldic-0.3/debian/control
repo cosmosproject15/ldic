@@ -1,0 +1,14 @@
+Source: ldic
+Section: utils
+Priority: optional
+Maintainer: C O M S O S project. <cosmosp2016@gmail.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: <cosmosproject15/tistory.com>
+
+
+Package: ldic
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <This program is simply dictionary about GNU LIUNX for linux devolepers and beginner>
+

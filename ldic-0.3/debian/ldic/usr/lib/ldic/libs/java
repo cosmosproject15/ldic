@@ -1,0 +1,18 @@
+< java programming language dictionarys >
+
+## Copyright: anonymouse
+## License: GPL-2.0+
+
+## basic
+class mybaby {
+    public static void main( String[] args ) {
+        // 변수 지정        
+        String baby = "My baby old is ";
+        // 상수 지정
+        int old = 3; 
+        // 지정한 변수와 상수 그리고 문자를 같이 출력한다.
+        System.out.println( baby + old + " years." );
+    }
+}
+
+라이브러리 업데이트 for v-0.2-2 (Fri, 11 Nov 2016 04:22:30 +0900) - COSMOS Project.(cosmosproject15@gmail.com)

@@ -1,0 +1,36 @@
+ldic for Debian
+--------------
+
+본 프로그램은 기본적으로 GPL2+ 저작권을 따르고 있으며 기초 유닉스 프로그램들을 응용한 100% 쉘 스크립트로 설계된 프로그램 입니다.
+
+모든 지구촌 유저들은 ' https://github.com/cosmosproject15/ldic ' 통해 본 프로그램을 소스 업그레이드 하여 제안 및 설계 참여가 가능하며 다양한 복사 방식의 본 프로그램 그대로 재배포및 시스템 탑재, 임베디드 탑재 등에 제한이 없습니다.
+
+만일 본 프로그램의 소스코드를 응용 변조하여 다른 프로그램을 개발할 경우 프로그램명과 제작자명을 반드시 변경하여 주십시오.
+
+만일 소스코드를 변경하고 저작권자도 같이 변경하거나 추가 하지 않고서 본 제작 라이선스 그대로 재배포 하면 문제가 발생할 수 있습니다.
+
+사전 라이브러리 추가 및 배포는 저작권에 유의 하여 알맞게 수정 하시길 바라며 github를 통한 라이브러리 변조 및 재배포는 본 개발자(COSMOS project)의 검수와 수정을 거칩니다. 
+
+만일 소스코드를 변경하여 기존 깃허브(' https://github.com/cosmosproject15/ldic ')가 아닌 방식으로 본 제작 라이선스 그대로 재배포 할 경우 저작권자(개발자)를 반드시 추가하여 배포해 주십시오.
+
+
+This program basically follows GPL2 + copyright and is a program designed as a 100% shell script based on basic Unix programs.
+All global users are able to participate in the proposal and design by upgrading the program through 'https://github.com/cosmosproject15/ldic'. There is no limit to the redistribution of the program, system loading with embedded copy, and so on.
+
+If you develop another program by applying the source code of this program, please change the program name and the name of the creator.
+
+If you change the source code and redistribute it under this production license without changing or adding the copyright holder, you may encounter problems.
+
+We hope that you will make proper modifications to add and distribute the dictionary library. Please note that modifying and redistributing libraries through github is subject to review and modification by the developer (COSMOS project).
+
+If you change the source code and redistribute it as it was in a non-existing 'https://github.com/cosmosproject15/ldic' manner, please be sure to add and distribute the new copyright(developer).
+
+Copyright: 2016 C O S M O S project.
+E-mail: cosmosproject15@gmail.com
+License: GPL-2.0+
+Homepage : http://cosmosproject2015.tistory.com
+
+Source url : https://github.com/cosmosproject15/ldic
+
+ -- C O M S O S project. <cosmosp2016@gmail.com>  Sun, 25 Jun 2017 01:48:35 +0900
+

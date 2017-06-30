@@ -1,0 +1,9 @@
+Package: ldic
+Version: 0.3-1
+Architecture: amd64
+Maintainer: C O M S O S project. <cosmosp2016@gmail.com>
+Installed-Size: 101
+Section: utils
+Priority: optional
+Homepage: <cosmosproject15/tistory.com>
+Description: <This program is simply dictionary about GNU LIUNX for linux devolepers and beginner>

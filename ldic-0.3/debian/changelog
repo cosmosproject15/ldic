@@ -1,0 +1,29 @@
+ldic (0.3-1) xenial; urgency=medium
+
+  * Source upgrade.
+  * Source bugs fix.
+  * Trashes librarys deleted.
+  * Hangul print added.
+  * Other file add option added.
+  * Other file possible sync.
+
+ -- C O M S O S project. <cosmosp2016@gmail.com>  Fri, 30 Jun 2017 02:16:30 +0900
+
+ldic (0.2-2) xenial; urgency=medium
+
+  * Many bugs fix.
+
+ -- C O M S O S project. <cosmosp2016@gmail.com>  Fri, 11 Nov 2016 04:30:58 +0900
+
+ldic (0.2-1) xenial; urgency=medium
+
+  * Source upgrade.
+  * Addfile option added.
+
+ -- C O M S O S project. <cosmosp2016@gmail.com>  Thu, 10 Nov 2016 22:16:23 +0900
+
+ldic (0.1-2) xenial; urgency=medium
+
+  * First release. 
+
+ -- C O M S O S project. <cosmosp2016@gmail.com>  Thu, 03 Nov 2016 17:57:31 +0900
