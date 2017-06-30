@@ -1,3 +1,9 @@
+ldic (0.3-2) xenial; urgency=medium
+
+  * Source bugs fix.
+ 
+ -- C O M S O S project. <cosmosp2016@gmail.com>  Fri, 30 Jun 2017 16:50:27 +0900
+
 ldic (0.3-1) xenial; urgency=medium
 
   * Source upgrade.

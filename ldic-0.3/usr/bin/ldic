@@ -70,8 +70,8 @@ $VERS
 홈페이지 (블로그) : http://cosmosproject2015.tistory.com
 
 제작자 : C O S M O S project. cosmosproject15@gmail.com
-감사 합니다."File has not found."
-"
+감사 합니다."
+
 else
 
 
@@ -332,7 +332,7 @@ Ldic has inserted to your ldic dictionary completed."
 		udfile=BASH;usrsimsave
 		;;
 	s|S)
-		udfile=python;usrsimsave
+		udfile=ppa;usrsimsave
 		;;
 	c|C)
 		udfile=c;usrsimsave

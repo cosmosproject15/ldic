@@ -1,8 +1,8 @@
 # ldic
 This repository is for software 'ldic'
 
-## Version : 0.3-1
-(Fri, 30 Jun 2017 02:16:30 +0900) 
+## Version : 0.3-2
+(Fri, 30 Jun 2017 16:50:27 +0900) 
 
 
 ## Architecture
